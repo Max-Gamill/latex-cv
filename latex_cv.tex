@@ -1,0 +1,260 @@
+\documentclass[a4paper,11pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{hyperref}
+
+% Page setup
+\geometry{margin=0.5in}
+\pagestyle{empty}
+
+% Colours
+\definecolor{primarycolour}{RGB}{220, 57, 53}%red{36,123,160}cerulean
+\definecolor{darkgray}{RGB}{80, 80, 80}
+\definecolor{lightgray}{RGB}{150, 150, 150}
+\definecolor{backgroundgray}{RGB}{245, 245, 245}
+
+% Custom commands for skill bars
+\newcommand{\skillbar}[2]{%
+    \begin{tikzpicture}[baseline]
+        \fill[lightgray] (0,0) rectangle (5,0.15);
+        \fill[black] (0,0) rectangle (#2*5/5,0.15);
+    \end{tikzpicture}%
+}
+
+% Section formatting
+\newcommand{\cvsection}[1]{%
+    \vspace{8pt}
+    {\color{primarycolour}\large\bfseries #1}
+    \vspace{4pt}
+    \hrule
+    \vspace{8pt}
+}
+
+\newcommand{\cvsubsection}[1]{%
+    \vspace{6pt}
+    {\color{darkgray}\bfseries #1}
+    \vspace{4pt}
+}
+
+% Custom list environment
+\newenvironment{cvlist}{%
+    \begin{itemize}[leftmargin=12pt,itemsep=2pt,parsep=0pt,topsep=4pt]
+}{%
+    \end{itemize}
+}
+
+\begin{document}
+
+% Header with photo and contact info
+\begin{minipage}[c]{0.7\textwidth}
+    {\Huge\bfseries Max Gamill}\\[8pt]
+    {\Large\color{darkgray} PhD Candidate}\\[-10pt]
+    
+    % Contact circles
+    {\color{primarycolour}\Huge\textbullet\textbullet\textbullet}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.25\textwidth}
+    \raggedleft
+    % Placeholder for photo - replace with actual photo
+    \includegraphics[width=4.0cm,height=4.0cm]{me.png}
+\end{minipage}
+
+\vspace{12pt}
+
+
+% PAGE 1
+\begin{minipage}[t]{0.30\textwidth}
+
+% Contact
+\cvsection{Contact}
+\faPhone\hspace{6pt} +44 7841 907404\\[2pt]
+\faEnvelope\hspace{6pt} maxgamill@live.com\\[2pt]
+\faGithub\hspace{6pt} MaxGamill
+
+\vspace{12pt}
+
+% Referees
+\cvsection{Referees}
+\textbf{Alice Pyne}\\
+Professor of Biophysics,\\
+University of Sheffield\\
+\faEnvelope\hspace{6pt} a.l.pyne@sheffield.ac.uk
+
+\vspace{8pt}
+
+\textbf{Mr Neil Shephard}\\
+Research Software Engineer\\
+University of Sheffield\\
+\faEnvelope\hspace{6pt} n.shephard@sheffield.ac.uk
+
+\vspace{8pt}
+
+\textbf{Dr Laura Wiggins}\\
+TopoStats Collaborator\\
+University of Sheffield\\
+\faEnvelope\hspace{6pt} l.wiggins@sheffield.ac.uk
+
+\vspace{12pt}
+
+% Key Skills
+\cvsection{Key Skills}
+\begin{cvlist}
+    \item \textbf{Production software development}. FAIR, modularly designed, Python image analysis pipelines with documentation.
+    \item \textbf{Computer vision \& image processing}. Tensorflow to develop, train and adapt segmentation (U-Net, Mask R-CNN), object recognition (YOLO), and generative (CVAE) models for image analysis.
+    \item \textbf{CI/CD \& DevOps}. Writing unit / integration / system tests, automating tests and publishing via GitHub actions, and Git version control.
+    \item \textbf{Cross-functional collaboration}. Leading diverse teams, liaising with technical and non-technical stakeholders.
+\end{cvlist}
+
+\end{minipage}
+\hfill
+\begin{tikzpicture}[baseline=(current bounding box.north)]
+    \draw[lightgray, line width=0.5pt] (0,0) -- (0,-22cm);
+\end{tikzpicture}
+\hfill
+\begin{minipage}[t]{0.62\textwidth}
+
+% Profile
+\cvsection{Profile}
+My Master's degree in Physics and computational biophysics PhD has focused on computer vision, image analysis, and production-grade software development to quantify DNA interactions. For this, I have developed multiple open-source Python software packages which total $26,000+$ downloads and winning the 2023 Sheffield FAIR software award. This highlights my ability to build modular, reusable tools that bridge cutting-edge AI architectures into practical pipelines. Experienced in collaborative Git workflows, performance optimisation through parallelisation, and CI/CD pipelines via GitHub actions. In my future career I aim to advance my deep learning skills beyond academia and apply computer vision techniques to creative content production and streamlining AI technologies into scalable processing pipelines.
+
+\vspace{12pt}
+
+% Education
+\cvsection{Education}
+
+\textbf{Doctorate of Philosophy in Computational Biophysics}
+
+\cvsubsection{University of Sheffield | 2021 - Present | Awarded}
+\begin{cvlist}
+    \item Developed clustering and computer vision pipelines for molecular segmentation and object recognition of  complex DNA structures.
+    \item Refactored Python 2 dependent software into a modular, reusable PyPI package with unit, integration, and system tests, and simple, advanced and function-level documentation.
+    \item Collaboration with external contributors and users to provide advice and maintain the software.
+    \item Benchmarked software on HPC clusters achieving 5-11x speed-ups.
+    \item Created posters and illustration documentation the Adobe suite (Illustrator, InDesign, Photoshop).
+    \item Created Blender renderings of biomolecules using their PDB files (atomic coordinates). 
+    \item Authored a first-author paper to Nature Communications.
+    \item Presented seminars, posters, and workshops at international conferences.
+\end{cvlist}
+
+\vspace{8pt}
+
+\textbf{Master of Physics}
+
+\cvsubsection{University of Leeds | 2016 - 2021 | First Class}
+\begin{cvlist}
+    \item Found a 3D-point predicting deep learning model was more robust to object density and noise vs a mathematical model. This was used to identify the density of specific receptors across a SMLM killer T Cell image.
+\end{cvlist}
+
+\end{minipage}
+
+\newpage
+
+% PAGE 2 - Two-column layout continues
+\begin{minipage}[t]{0.30\textwidth}
+
+% Languages & Packages
+\cvsection{Languages \& Packages}
+\textbf{Python} - OpenCV, MatplotLib, PyTest, Scikit Image, Scikit Learn, Seaborn, Tensorflow.\\[4pt]
+\skillbar{Python}{5}
+
+\vspace{4pt}
+\textbf{Web Tech} - HTML, CSS, JavaScript (AJAX), Django\\[2pt]
+\skillbar{HTML}{3}
+
+\vspace{4pt}
+\textbf{Data} - SQL, data pipeline development\\[2pt]
+\skillbar{CSS}{3}
+
+\vspace{4pt}
+\textbf{Other} - MatLab, Markdown, LaTeX\\[2pt]
+\skillbar{JavaScript}{4}
+
+\vspace{12pt}
+
+% Key Software
+\cvsection{Key Software}
+\textbf{Git} - Authored over 1.2k commits, 106 PR's and 72 issues in 2025. Setup automated CI/CD, test and publishing, GitHub actions.
+
+\vspace{6pt}
+\textbf{Tensorflow / DVC} - Created multiple reproducible ML training pipelines with data version control to compare parameter / data / architecture changes.
+
+\vspace{6pt}
+\textbf{High Performance Computing} - Unix, environment creation, SLURM, and parallelisation.
+
+\vspace{6pt}
+\textbf{Docker} - Making docker files and running containers for containerisation to reduce machine-to-machine variability.
+
+\vspace{6pt}
+\textbf{Testing and Documentation} - PyTest, Sphinx, environment creation, SLURM, and parallelisation.
+
+\vspace{12pt}
+
+% Achievements
+\cvsection{Achievements}
+\begin{cvlist}
+    \item Invited speaker at a BIRS DNA topology conference in Canada on my novel image analysis pipeline.
+    \item Awarded the 2023 Sheffield FAIR software development award.
+    \item Achieved the best client satisfaction score of my analytics team at IBM.
+\end{cvlist}
+
+\end{minipage}
+\hfill
+\begin{tikzpicture}[baseline=(current bounding box.north)]
+    \draw[lightgray, line width=0.5pt] (0,0) -- (0,-27cm);
+\end{tikzpicture}
+\hfill
+\begin{minipage}[t]{0.62\textwidth}
+
+% Published Packages
+\cvsection{Published Packages}
+\begin{cvlist}
+    \item \textbf{TopoStats} - Atomic force microscopy image analysis software to quantify and characterise topographs of nanoscale biomolecules. Has $9,000+$ downloads from international research groups. Winner of the 2023 Sheffield FAIR software award.
+    \item \textbf{AFMReader} - General file loader for many atomic force microscopy filetypes to extract data and metadata into Python. Has $17,000+$ downloads demonstrating scalable software adoption.
+    \item \textbf{Napari-AFMReader} - A widget for the interactive BioImage viewer software "Napari" to help integrate atomic force microscopy images into the bioimage analysis community.
+\end{cvlist}
+
+\vspace{12pt}
+
+% Relevant Work Experience
+\cvsection{Relevant Work Experience}
+
+\cvsubsection{IBM | 2018 - 2019 | Cognos Analytics Technical Support Analyst}
+\begin{cvlist}
+    \item Resolved 230+ cases spanning general questions, error messages, defects, and load balancing issues.
+    \item Managed 10-20 concurrent clients/cases, prioritising system critical and old cases.
+    \item Developed workarounds tailored to client requirements and software / hardware limitations.
+    \item Configured minimal test case environments on Unix and Microsoft operating systems.
+    \item Root cause analysis through the investigation of log files.
+    \item Built Cognos Analytics reports using SQL queries.
+    \item Authored 36 technical documents and 11 corrections.
+    \item Scored the team highest net promoter score of 79 reflecting client satisfaction.
+\end{cvlist}
+
+\vspace{12pt}
+
+% Relevant Interests and Commitments
+\cvsection{Personal Projects}
+\begin{cvlist}
+    \item \textbf{Machine Learning}. Developed machine learning segmentation and style transfer models alongside other image processing libraries to design personalised cards and wedding invitations. Currently building into an interactive Django website.
+    \item \textbf{Completed courses}. Using medical imaging deep-learning models, and contributing and developing microscopy deep-learning resources, experience with HPC resources from introductory skills courses.
+    \item \textbf{Teaching \& knowledge transfer}. Beginners deep learning workshop in collaboration with the Research Software Engineering team pitched at academics to use in their own research.
+    \item \textbf{Web Development (Django)} - Developed a dynamic website portfolio of interactive Python projects using the Django and AJAX frameworks on a Raspberry Pi Server.
+\end{cvlist}
+
+\end{minipage}
+
+\end{document}
