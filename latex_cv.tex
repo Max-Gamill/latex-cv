@@ -19,6 +19,8 @@
 % Page setup
 \geometry{margin=0.5in}
 \pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
 
 % Colours
 \definecolor{primarycolour}{RGB}{220, 57, 53}%red{36,123,160}cerulean
@@ -26,32 +28,27 @@
 \definecolor{lightgray}{RGB}{150, 150, 150}
 \definecolor{backgroundgray}{RGB}{245, 245, 245}
 
-% Custom commands for skill bars
-\newcommand{\skillbar}[2]{%
-    \begin{tikzpicture}[baseline]
-        \fill[lightgray] (0,0) rectangle (5,0.15);
-        \fill[black] (0,0) rectangle (#2*5/5,0.15);
-    \end{tikzpicture}%
-}
+% Hyperref
+\hypersetup{colorlinks=true, urlcolor=blue} 
 
 % Section formatting
 \newcommand{\cvsection}[1]{%
-    \vspace{8pt}
+    \vspace{1pt}
     {\color{primarycolour}\large\bfseries #1}
     \vspace{4pt}
     \hrule
-    \vspace{8pt}
+    \vspace{0pt}
 }
 
 \newcommand{\cvsubsection}[1]{%
-    \vspace{6pt}
-    {\color{darkgray}\bfseries #1}
-    \vspace{4pt}
+    \vspace{2pt}
+    {\color{black}\bfseries #1}
+    \vspace{0pt}
 }
 
 % Custom list environment
 \newenvironment{cvlist}{%
-    \begin{itemize}[leftmargin=12pt,itemsep=2pt,parsep=0pt,topsep=4pt]
+    \begin{itemize}[leftmargin=12pt,itemsep=0pt,parsep=0pt,topsep=0pt]
 }{%
     \end{itemize}
 }
@@ -59,202 +56,84 @@
 \begin{document}
 
 % Header with photo and contact info
-\begin{minipage}[c]{0.7\textwidth}
-    {\Huge\bfseries Max Gamill}\\[8pt]
-    {\Large\color{darkgray} PhD Candidate}\\[-10pt]
-    
+\begin{minipage}[c]{0.65\textwidth}
+    {\Huge\bfseries Max Gamill, Ph.D.}\\[8pt]
     % Contact circles
     {\color{primarycolour}\Huge\textbullet\textbullet\textbullet}
+    \hspace{10pt}
+    \Large Python | Git | CI / CD
 \end{minipage}
-\hfill
-\begin{minipage}[c]{0.25\textwidth}
+%\hfill
+\begin{minipage}[c]{0.35\textwidth}
     \raggedleft
-    % Placeholder for photo - replace with actual photo
-    \includegraphics[width=3.5cm,height=3.5cm]{me.png}
+    % Contact
+    \cvsection{Contact}
+    +44 7841 907404 \hspace{6pt}\faPhone \\ [2pt]
+    maxgamill@live.com \hspace{6pt}\faEnvelope \\ [2pt]
+    \href{https://www.linkedin.com/in/max-gamill/}{Max Gamill} \hspace{6pt}\faLinkedin \hspace{12pt}
+    \href{https://www.linkedin.com/in/max-gamill/}{Max-Gamill} \hspace{6pt}\faGithub
 \end{minipage}
-
 \vspace{0pt}
-
-
-% PAGE 1
-\begin{minipage}[t]{0.30\textwidth}
-
-% Contact
-\cvsection{Contact}
-\faPhone\hspace{6pt} +44 7841 907404\\[2pt]
-\faEnvelope\hspace{6pt} maxgamill@live.com\\[2pt]
-\faGithub\hspace{6pt} Max-Gamill
-
-\vspace{12pt}
-
-% Referees
-\cvsection{Referees}
-\textbf{Prof. Alice Pyne}\\
-Professor of Biophysics,\\
-University of Sheffield\\
-\faEnvelope\hspace{6pt} a.l.pyne@sheffield.ac.uk
-
-\vspace{8pt}
-
-\textbf{Mr. Neil Shephard}\\
-Research Software Engineer\\
-University of Sheffield\\
-\faEnvelope\hspace{6pt} n.shephard@sheffield.ac.uk
-
-\vspace{8pt}
-
-\textbf{Dr. Laura Wiggins}\\
-TopoStats Collaborator\\
-University of Sheffield\\
-\faEnvelope\hspace{6pt} l.wiggins@sheffield.ac.uk
-
-\vspace{12pt}
-
-% Key Skills
-\cvsection{Key Skills}
-\begin{cvlist}
-    \item \textbf{Machine \& Deep Learning}. TensorFlow, DVC and Albumentations to develop, train, adapt, and evaluate segmentation (U-Net), object detection (YOLOv3, Mask-RCNN) and generative models (CVAE).
-    \item \textbf{Production Software Development}. Designing FAIR, modular, end-to-end image analysis packages and pipelines.
-    \item \textbf{CI/CD \& DevOps}. Collaborating in Git, writing unit / integration / system tests, automating tests and package publishing via GitHub actions.
-    \item \textbf{Cross-Functional Collaboration}. Leading an RSE, post-doc, and PhDs to refactor a Python 2 codebase in 7 months using Git, resulting in 70\% test coverage and documentation.
-\end{cvlist}
-
-\end{minipage}
-\hfill
-\begin{tikzpicture}[baseline=(current bounding box.north)]
-    \draw[lightgray, line width=0.5pt] (0,0) -- (0,-23.5cm);
-\end{tikzpicture}
-\hfill
-\begin{minipage}[t]{0.62\textwidth}
 
 % Profile
 \cvsection{Profile}
-My Master's degree in Physics and computational biophysics PhD has focused on software development of novel computer vision, image analysis pipelines to quantify microscopy images. For this, I have collaboratively developed and publicly presented multiple open-source Python software packages utilising Git, Git workflows and GitHub CI/CD pipelines, winning the 2023 Sheffield FAIR software award. I am experienced in building segmentation, classification, and predictive modelling pipelines that translate research into production-grade software downloaded by over $37,000$ researchers. I am passionate to dive into banking, specifically to improve customer relationships by helping fraud victims, using research-driven ML methods to solve complex fraud detection problems with Starling Bank.
+Software developer with 5 years experience collaboratively building, testing, and enhancing research software from computer vision pipelines to Django web apps. These software packages total over $37,000$ downloads and won the 2023 Sheffield FAIR software award. Motivated to drive research further by a proven track record of assisting researchers with HPC issues and developing FAIR research software.
 
-\vspace{12pt}
+% Key Skills
+\cvsection{Key Skills and Software}
+\textbf{Production Software Development}. FAIR Software Development | End-to-end Python Pipelines | Milestone Planning | Version Control | Documentation (Sphinx, GitHub Pages) | Containerisation (Docker) | Deployment.
+
+\textbf{CI/CD \& DevOps}. Git Collaboration (1.2k+ commits, 106 PR's, 72 issues in 2025) | GitHub Actions (Test Automation, Tagged Releases) | PyTest (Unit, Integration, System Tests) | Linting | Hosting Town Halls | Leading Multi-disciplinary Teams | User Training.
+
+\textbf{Machine \& Deep Learning}. Scikit-Learn | Clustering (kNN, DBSCAN, GMM) | TensorFlow | Data Version Control | Albumentations | Segmentation Models (U-Net) | Object Detection Models (YOLOv3, Mask-RCNN) | Generative Models (CVAE).
+
+\textbf{High Performance Computing}. Unix | Environment Management | SLURM and PBS Schedulers | MPI and Multiprocessing Parallelisation | HPC User Support.
+
+
+% Key Achievements
+\cvsection{Key Achievements}
+\begin{cvlist}
+    \item Awarded the 2023 Sheffield FAIR software development award.
+    \item Invited speaker at the BIRS DNA topology conference in Canada for my novel image analysis pipeline.
+    \item First author Nature Communications paper on a tracing algorithm for intertwined DNA structures.
+    \item Achieved the highest client satisfaction score of 79\% within the Cognos Analytics Support team at IBM.
+\end{cvlist}
+
+% Work Experience
+\cvsection{Professional Experience}
+
+\cvsubsection{\textbf{Imperial College London | HPC and RSE Experience Programme \hfill | 2025 - Present |}}
+\begin{cvlist}
+    \item Created a Cookiecutter UV project template. Built interactive Django projects supporting environmental and energy research data, and team resource management.
+    \item Resolved bash scripting, resource availability, software and parallel processing issues on HPC systems.
+    %\item Intel Project
+\end{cvlist}
+
+\cvsubsection{\textbf{University of Sheffield | Postgraduate Researcher \hfill | 2021 - 2025 |}}
+\begin{cvlist}
+    \item Developed classical and machine learning pipelines for microscopy image analysis with $37,000+$ downloads; \textit{TopoStats}, \textit{AFMReader}, and \textit{Napari-AFMReader}.
+    \item Built a custom DL + ML pipeline to cluster abstract DNA shapes achieving 60\% accuracy.
+    \item Trained U-Net models reducing misclassified touching objects and reducing measurement error by $\sim$30\%. 
+    \item Created synthetic data for transfer learning of YOLOv3 and Mask R-CNN models to classify DNA shapes.
+    \item Presented at international conferences (CBIAS, BIRS, I2K) via seminars and software workshops.
+\end{cvlist}
+
+\cvsubsection{\textbf{IBM | Cognos Analytics Technical Support Analyst \hfill | 2018 - 2019 |}}
+\begin{cvlist}
+    \item Managed 10-20 concurrent cases to resolve 230+ cases spanning errors, defects, and load balancing issues.
+    \item Authored 36 technical documents and 11 corrections.
+    \item Configured minimal test case environments on Unix and Microsoft operating systems.
+    \item Root cause analysis through the investigation of log files.
+\end{cvlist}
 
 % Education
 \cvsection{Education}
 
-\textbf{Doctorate of Philosophy in Computational Biophysics}
+\cvsubsection{University of Sheffield | Doctorate of Philosophy in Computational Biophysics \hfill | 2021 - 2025 |}
 
-\cvsubsection{University of Sheffield | 2021 - Present | Awarded}
+\cvsubsection{University of Leeds | Master of Physics | First Class \hfill | 2016 - 2021 |}
 \begin{cvlist}
-    \item Collaboratively developed classical and machine learning pipelines for image analysis software with $37,000+$ downloads; TopoStats, AFMReader, and Napari-AFMReader.
-    \item Trained and evaluated k-means, DBSCAN, and GMM models to cluster similar DNA shapes within the latent space of a loss-function modified CVAE. The GMM achieved 60\% accuracy in a non-discrete classification task.
-    \item Trained U-Net models for segmentation improvements of touching objects, reducing the error of area statistics by $\sim$30\%.
-    \item Validated YOLOv3 and Mask R-CNN models to classify biomolecular structures. Identified a dataset imbalance (70\% in class 0 of 8), addressed by developing synthetic data for transfer learning.
-    \item Improved pipeline governance by liaising with Microscopy companies and integrating proprietary file formats, removing bias.
-    \item Guided external stakeholders to contribute and maintain software, helping with lifecycle management, and organised town halls between developers and users to align milestones to user needs.
-    \item Disseminated knowledge via seminars, posters, and software workshops at international conferences (CBIAS, BIRS, I2K).
-    \item First author of a Nature Communications paper - a 14.7 impact-factor journal.
+    \item DL model mapped receptor localisations improved on a classical model by $\sim$30\% in object density and noise.
 \end{cvlist}
-
-\vspace{8pt}
-
-\textbf{Master of Physics}
-
-\cvsubsection{University of Leeds | 2016 - 2021 | First Class}
-\begin{cvlist}
-    \item Trained and evaluated a 3D-point predicting DL model was $\sim$30\% more robust to $4\times$ object density and noise vs a mathematical model. This better mapped receptor density across a SMLM killer T-Cell image.
-\end{cvlist}
-
-\end{minipage}
-
-\newpage
-
-% PAGE 2 - Two-column layout continues
-\begin{minipage}[t]{0.30\textwidth}
-
-% Languages & Packages
-\cvsection{Languages \& Packages}
-\textbf{Python} - Pandas, Numpy, PyTest, Black, PyLint, Seaborn, Matplotlib.\\[4pt]
-\skillbar{Python}{5}
-
-\vspace{4pt}
-\textbf{Python - ML \& DL} - Scikit-Image, Scikit-Learn, TensorFlow, Albumentations\\[2pt]
-\skillbar{MLDL}{4}
-
-\vspace{4pt}
-\textbf{Data} - SQL, data pipeline development\\[2pt]
-\skillbar{CSS}{3}
-
-\vspace{4pt}
-\textbf{Documentation} - Markdown, LaTeX, HTML, CSS\\[2pt]
-\skillbar{Other}{4}
-
-\vspace{12pt}
-
-% Key Software
-\cvsection{Key Software}
-\textbf{Git} - Authored over 1.2k commits, 106 PR's and 72 issues in 2025. Setup automated CI/CD, test and publishing, GitHub actions.
-
-\vspace{6pt}
-\textbf{TensorFlow / DVC} - Created multiple reproducible ML training pipelines with data version control to compare parameter / data / architecture changes.
-
-\vspace{6pt}
-\textbf{High Performance Computing} - Unix, environment creation, SLURM, and parallelisation.
-
-\vspace{6pt}
-\textbf{Docker} - Making docker files and running containers for containerisation to reduce machine-to-machine variability.
-
-\vspace{6pt}
-\textbf{Testing and Documentation} - PyTest, Sphinx, environment creation, SLURM, and parallelisation.
-
-\vspace{12pt}
-
-% Achievements
-\cvsection{Achievements}
-\begin{cvlist}
-    \item Invited speaker at a BIRS DNA topology conference in Canada on my novel image analysis pipeline.
-    \item Awarded the 2023 Sheffield FAIR software development award.
-    \item Achieved the highest client satisfaction score of my analytics team at IBM.
-\end{cvlist}
-
-\end{minipage}
-\hfill
-\begin{tikzpicture}[baseline=(current bounding box.north)]
-    \draw[lightgray, line width=0.5pt] (0,0) -- (0,-27cm);
-\end{tikzpicture}
-\hfill
-\begin{minipage}[t]{0.62\textwidth}
-
-% Published Packages
-\cvsection{Published Packages}
-\begin{cvlist}
-    \item \textbf{TopoStats} - Atomic force microscopy image analysis software to quantify and characterise topographs of nanoscale biomolecules. Has $12,000+$ downloads from international research groups. Winner of the 2023 Sheffield FAIR software award.
-    \item \textbf{AFMReader} - General file loader for many atomic force microscopy file types to extract data and metadata into Python. Has $25,000+$ downloads demonstrating scalable software adoption.
-    \item \textbf{Napari-AFMReader} - A widget for the interactive BioImage viewer software "Napari" to help integrate atomic force microscopy images into the bioimage analysis community. Has $450+$ downloads for recent software and is the backbone of the Napari-TopoStats software (in publication).
-\end{cvlist}
-
-\vspace{12pt}
-
-% Relevant Work Experience
-\cvsection{Relevant Work Experience}
-
-\cvsubsection{IBM | 2018 - 2019 | Cognos Analytics Technical Support Analyst}
-\begin{cvlist}
-    \item Resolved 230+ cases spanning general questions, error messages, defects, and load balancing issues.
-    \item Managed 10-20 concurrent clients/cases, prioritising system critical and old cases.
-    \item Developed workarounds tailored to client requirements and software / hardware limitations.
-    \item Configured minimal test case environments on Unix and Microsoft operating systems.
-    \item Root cause analysis through the investigation of log files.
-    \item Built Cognos Analytics reports using SQL queries.
-    \item Authored 36 technical documents and 11 corrections.
-    \item Scored the team highest net promoter score of 79 reflecting client satisfaction.
-\end{cvlist}
-
-\vspace{12pt}
-
-% Relevant Interests and Commitments
-\cvsection{Personal Projects \& Commitments}
-\begin{cvlist}
-    \item \textbf{Machine Learning}. Developed deep learning segmentation and style transfer models alongside image processing scripts to design personalised cards. Currently building into an interactive Django website. Using medical imaging BioImage Zoo and DL4Mic deep learning models during workshops. Interested in LLMs and hope to run a 7/8B open source model locally soon.
-    \item \textbf{Web Development (Django)}. Developed a dynamic website portfolio of interactive Python projects using the Django and AJAX frameworks on a Raspberry Pi Server.
-    \item \textbf{Completed Courses}. Accelerating model training using HPC resources after attending introductory HPC skills courses. Attended multiple Git and GitKracken courses. Contributing and developing microscopy deep learning resources at I2K and CBIAS workshops.
-    \item \textbf{Teaching \& Knowledge Transfer}. Taught academics a beginners deep learning workshop in collaboration with the Research Software Engineering team. Developed best use HPC and TopoStats software guides as living documents.
-\end{cvlist}
-
-\end{minipage}
 
 \end{document}
